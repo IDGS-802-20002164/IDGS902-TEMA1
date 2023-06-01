@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "LeerDatos";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <table>
+                <tr>
+                    <th>Inglés</th>
+                    <th>Español</th>
+                </tr>
+                @foreach (string item in ViewBag.Archivos)
+                {
+                    <tr>
+                        @foreach (string item2 in item.Split(':'))
+                        {
+                            <td>@item2</td>
+                        }
+                    </tr>
+                }
+            </table>
+            <br />
+            <br />
+        </div>
+        
+        <div class="col-lg-6">
+            @using (Html.BeginForm("LeerDatos", "Traducctor"))
+            {
+                <form action="/" method="post">
+                    <label>Escriba la palabra:</label>
+                    <input type="text" name="Palabra" value="" />
+
+                    <div>
+                        <input type="radio" id="opcion1" name="opcion" value="opcion1">
+                        <label for="opcion1">Inglés</label>
+
+                        <input type="radio" id="opcion2" name="opcion" value="opcion2">
+                        <label for="opcion2">Español</label>
+                    </div>
+
+                    <br />
+                    <br />
+                    <label>Palabra Traducida:</label>
+                    <input type="text" name="PalabraT" value="@ViewBag.ArchivosFiltrados" />
+                    <br />
+                    <input type="submit" name="name" value="Traducir" class="btn btn-info" />
+                </form>
+            }
+        </div>
+    </div>
+</div>

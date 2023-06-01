@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Cajas";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div>
+                <form action="/" method="post">
+                    <label>Numero1:</label>
+                    <input type="text" name="Num1" value="" />
+                    <input type="submit" name="name" value="Crear Cajas" />
+                </form>
+            </div>
+            <div>
+                <form action="Cajas/Cajas2" method="post">
+                    <div>
+
+                        <br />
+                        @for (int i = 1; i <= ViewBag.Num; i++)
+                        {
+                            <input type="text" name="Nums1" value="" />
+                        }
+                    </div>
+                    <br />
+                    <div>
+                        <input type="submit" name="name" value="Calcular" />
+                    </div>
+
+                </form>
+            </div>
+
+            <h2>@ViewBag.sum</h2>
+            <h2>@ViewBag.p</h2>
+            <h2>@ViewBag.max</h2>
+            <h2>@ViewBag.min</h2>
+            <h2>@ViewBag.prom</h2>
+
+        </div>
+        <div class="col-lg-6">
+        </div>
+    </div>
+</div>

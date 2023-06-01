@@ -1,0 +1,49 @@
+﻿@model proyecto1.Models.Traducctor
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="/" method="post"></form>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.PalabraIn, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.PalabraIn, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.PalabraEs, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.PalabraEs, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset col-md-10">
+                <input type="submit" name="name" value="Registrar" class="btn btn-info" />
+
+               
+            </div>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("LeerDatos", "Traducctor"))
+{
+    <div class="form-horizontal">
+        <!-- Resto de tu formulario -->
+
+        <div class="form-group">
+            <div class="col-md-offset col-md-10">
+                
+
+                <input type="submit" name="name" value="Traducir" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}

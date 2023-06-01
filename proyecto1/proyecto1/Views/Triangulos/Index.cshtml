@@ -1,0 +1,63 @@
+﻿@model proyecto1.Models.Triangulo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>Index</h2>
+
+<form action="/" method="post"></form>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.X1, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.X1, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Y1, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.Y1, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.X2, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.X2, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Y2, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.Y2, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.X3, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.X3, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Y3, htmlAttributes:
+                 new { @class = "control-label" })
+            @Html.EditorFor(model => model.Y3, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+
+        <h3>@ViewBag.esTriangulo</h3>
+        <h3>@ViewBag.TipoTriangulo</h3>
+        <h3>@ViewBag.Area</h3>
+        <h3>@ViewBag.A</h3>
+        <h3>@ViewBag.B</h3>
+        <h3>@ViewBag.C</h3>
+        <div class="form-group">
+            <div class="col-md-offset col-md-10">
+
+
+                <input type="submit" name="name" value="Traducir" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+
+
